@@ -34,12 +34,20 @@ class ConstraintValidator extends SymfonyConstraintValidator
             return;
         }
 
-        foreach ($validator->getMessages() as $message) {
+        if (isset($constraint->message)) {
             $this->context->addViolation(
-                $message,
+                $constraint->message,
                 array(),
                 $value
             );
+        } else {
+            foreach ($validator->getMessages() as $message) {
+                $this->context->addViolation(
+                    $message,
+                    array(),
+                    $value
+                );
+            }
         }
     }
 }
