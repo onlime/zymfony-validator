@@ -10,9 +10,10 @@
         }
     ],
     "require": {
-        "php":                               ">=5.3.3",
-        "symfony/validator":                 ">=2.2,<3.0",
-        "zendframework/zend-validator":      "2.1.*"
+        "php":                               ">=5.5",
+        "symfony/validator":                 "~2.8",
+        "zendframework/zend-validator":      "~2.5",
+        "zendframework/zend-servicemanager": "~2.5"
     },
     "autoload": {
         "psr-0": { "Zymfony": "src" }
