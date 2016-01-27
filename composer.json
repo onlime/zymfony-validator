@@ -11,7 +11,7 @@
     ],
     "require": {
         "php":                               ">=5.5",
-        "symfony/validator":                 "~2.8,~3.0",
+        "symfony/validator":                 "~2.8|~3.0",
         "zendframework/zend-validator":      "~2.5",
         "zendframework/zend-servicemanager": "~2.5"
     },
