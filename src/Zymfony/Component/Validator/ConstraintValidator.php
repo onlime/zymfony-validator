@@ -27,8 +27,13 @@ class ConstraintValidator extends SymfonyConstraintValidator
      */
     public function validate($value, SymfonyConstraint $constraint)
     {
+        // Symfony constraint validators default to not validating empty values
+        if (null === $value || '' === $value) {
+            return;
+        }
+
         $validatorManager = new ValidatorPluginManager();
-        $validator = $validatorManager->get($constraint->validator, $constraint->options);
+        $validator        = $validatorManager->get($constraint->validator, $constraint->options);
 
         if ($validator->isValid($value)) {
             return;
